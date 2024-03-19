@@ -18,6 +18,10 @@ app.get("/", async (req, res) => {
   res.json({ message: "Hello World" });
 });
 
+app.post("/users", async (req, res) => {
+  res.json({ okay: "It s okay" });
+});
+
 app.listen(port, () => {
   return console.log(`http://localhost:${port}`);
 });
