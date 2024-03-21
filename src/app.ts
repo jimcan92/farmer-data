@@ -9,13 +9,12 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", async (req, res) => {
-  const r = await prisma.user.create({
-    data: { id: "6110389", name: "Jimboy Cantila", email: "jimcan@gmail.com" },
-  });
+  // const r = await prisma.user.create({
+  //   data: { id: "6110389", name: "Jimboy Cantila", email: "jimcan@gmail.com" },
+  // });
   const users = await prisma.user.findMany();
-  console.log(users);
 
-  res.json({ message: "Hello World" });
+  res.json(users);
 });
 
 app.post("/users", async (req, res) => {
